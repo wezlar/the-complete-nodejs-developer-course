@@ -8,19 +8,25 @@ const app = express();
 // app.com/about
 
 app.get('', (req, res) => {
-  res.send('Hello express!');
+  res.send('<h1>Weather</h1>');
 });
 
 app.get('/help', (req, res) => {
-  res.send('Help page');
+  res.send({
+    name: 'Dean',
+    age: 36,
+  });
 });
 
 app.get('/about', (req, res) => {
-  res.send('About page');
+  res.send('<h1>About page</h1>');
 });
 
 app.get('/weather', (req, res) => {
-  res.send('Weather page');
+  res.send({
+    forecast: 'It is raining',
+    location: 'Eastbourne',
+  });
 });
 
 app.listen(3000, () => {
