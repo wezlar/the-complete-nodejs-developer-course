@@ -40,9 +40,29 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
+  if (!req.query.address) {
+    return res.send({
+      error: 'You must provide an address',
+    });
+  }
+
   res.send({
+    address: req.query.address,
     forecast: 'It is raining',
     location: 'Eastbourne',
+  });
+});
+
+app.get('/products', (req, res) => {
+  if (!req.query.search) {
+    return res.send({
+      error: 'You mist provide a search term',
+    });
+  }
+
+  console.log(req.query);
+  res.send({
+    products: [],
   });
 });
 
