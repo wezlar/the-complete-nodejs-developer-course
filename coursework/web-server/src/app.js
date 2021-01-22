@@ -68,7 +68,7 @@ app.get('/weather', (req, res) => {
         res.send({
           address: placeName,
           forecast: forecastData.display,
-          location: 'Eastbourne',
+          location: req.query.address,
         });
       });
     },
