@@ -39,16 +39,36 @@ MongoClient.connect(
     //   },
     // );
 
-    const updatePromise = db.collection('tasks').updateMany(
-      { completed: false },
-      {
-        $set: {
-          completed: true,
-        },
-      },
-    );
+    // const updatePromise = db.collection('tasks').updateMany(
+    //   { completed: false },
+    //   {
+    //     $set: {
+    //       completed: true,
+    //     },
+    //   },
+    // );
 
-    updatePromise
+    // updatePromise
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+
+    // db.collection('users')
+    //   .deleteMany({
+    //     age: 56,
+    //   })
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+
+    db.collection('tasks')
+      .deleteOne({ description: 'Sand down wall' })
       .then((result) => {
         console.log(result);
       })
