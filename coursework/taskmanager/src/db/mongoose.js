@@ -73,7 +73,7 @@ const Tasks = mongoose.model('Tasks', {
 });
 
 const task = new Tasks({
-  description: '      Paint the walls',
+  description: 'Paint the walls',
 });
 
 task
